@@ -1,14 +1,17 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.6.3'
 
 gem 'rails', '~> 5.2.2.1'
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pg', '~> 1.1.4'
 gem 'puma', '~> 3.11'
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'rack-cors'
+
+gem 'trailblazer-endpoint', github: 'trailblazer/trailblazer-endpoint'
+gem 'trailblazer-rails'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
 end
 
 group :development do
