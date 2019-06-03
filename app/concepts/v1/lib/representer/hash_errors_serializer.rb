@@ -1,4 +1,4 @@
-module Lib::Representer
+module V1::Lib::Representer
   class HashErrorsSerializer
     def initialize(exposures)
       @errors = exposures[:object]
