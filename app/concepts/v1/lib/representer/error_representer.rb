@@ -1,4 +1,4 @@
-module Lib::Representer
+module V1::Lib::Representer
   class ErrorRepresenter < JSONAPI::Serializable::Error
     detail do
       @message
