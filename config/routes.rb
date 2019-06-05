@@ -1,3 +1,15 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/', to: redirect('api/documentation/v1')
+
+  scope :api do
+    get '/documentation/:version', to: 'documentation#show'
+  end
+
+  scope :api, module: :v1 do
+    resource :users, only: :create do
+      member do
+        post :login
+      end
+    end
+  end
 end

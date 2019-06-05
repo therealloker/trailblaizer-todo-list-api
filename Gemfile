@@ -9,6 +9,7 @@ gem 'rails', '~> 5.2.2.1'
 
 gem 'bcrypt'
 gem 'dry-validation', '~> 0.13.3'
+gem 'jsonapi-rails', github: 'jsonapi-rb/jsonapi-rails'
 gem 'jwt'
 gem 'reform-rails'
 gem 'trailblazer-endpoint', github: 'trailblazer/trailblazer-endpoint'
@@ -30,6 +31,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'dox', require: false
   gem 'factory_bot_rails'
   gem 'json_matchers'
   gem 'shoulda-matchers'
