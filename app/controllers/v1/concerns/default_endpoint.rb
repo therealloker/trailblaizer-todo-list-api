@@ -21,7 +21,7 @@ module V1
     def render_errors(result, status)
       render jsonapi_errors: result['contract.default'].errors,
             class: {
-              'Reform::Contract::Errors': Lib::Representer::ReformErrorsSerializer
+              'Reform::Contract::Errors': V1::Lib::Representer::ReformErrorsSerializer
             },
             status: status
     end
