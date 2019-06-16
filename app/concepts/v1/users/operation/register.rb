@@ -1,4 +1,4 @@
-module Api::V1::Users::Operation
+module V1::Users::Operation
   class Register < Trailblazer::Operation
     step Model(User, :new)
     step Contract::Build(constant: V1::Users::Contract::Register)

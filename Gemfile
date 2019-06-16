@@ -8,6 +8,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.2.1'
 
 gem 'bcrypt'
+gem 'dry-configurable'
 gem 'dry-validation', '~> 0.13.3'
 gem 'jsonapi-rails', github: 'jsonapi-rb/jsonapi-rails'
 gem 'jwt'
