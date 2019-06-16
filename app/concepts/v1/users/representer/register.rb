@@ -1,5 +1,5 @@
 module V1::Users::Representer
-  class Register < JSONAPI::Serializable::Resource
+  class Register < ApplicationRepresenter
     type 'users'
 
     attributes :email
