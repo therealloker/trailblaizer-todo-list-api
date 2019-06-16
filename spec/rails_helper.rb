@@ -1,6 +1,7 @@
 require 'spec_helper'
 require 'json_matchers/rspec'
 require 'factory_bot_rails'
+require 'dox'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
@@ -15,7 +16,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-JsonMatchers.schema_root = 'spec/support/api/schemas'
+JsonMatchers.schema_root = 'spec/support/schemas'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -30,4 +31,10 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include FactoryBot::Syntax::Methods
+end
+
+Dox.configure do |config|
+  config.header_file_path = Rails.root.join('spec/docs/v1/descriptions/header.md')
+  config.desc_folder_path = Rails.root.join('spec/docs/v1/descriptions')
+  config.headers_whitelist = ['Accept', 'Authorization']
 end

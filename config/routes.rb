@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   end
 
   scope :api, module: :v1 do
-    resource :users, only: :create do
-      member do
-        post :login
-      end
+    namespace :users do
+      post :registration
+      post :login
     end
   end
 end

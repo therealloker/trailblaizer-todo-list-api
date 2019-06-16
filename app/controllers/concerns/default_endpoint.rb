@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-module V1
   module DefaultEndpoint
     protected
 
     def default_handler
       lambda do |match|
+        match.created { |result| result[:renderer_options] ? render_response(result, :created) : head(:created) }
+        match.destroyed { head(:no_content) }
+        match.forbidden { head(:forbidden) }
         match.forbidden { |_result| head(:forbidden) }
         match.invalid { |result| render_errors(result, :unprocessable_entity) }
         match.success { |result| render_response(result, :ok) }
@@ -30,4 +32,3 @@ module V1
       render jsonapi: result[:model], **result[:renderer_options], include: params[:include], status: status
     end
   end
-end

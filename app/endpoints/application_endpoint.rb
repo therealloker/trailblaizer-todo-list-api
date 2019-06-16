@@ -16,6 +16,22 @@ class ApplicationEndpoint < Trailblazer::Endpoint
     success: Dry::Matcher::Case.new(
       match: ->(result) { result.success? },
       resolve: ->(result) { result }
+    ),
+    created: Dry::Matcher::Case.new(
+      match:   ->(result) { result.success? && result['model.action'] == :new  },
+      resolve: ->(result) { result }
+    ),
+    destroyed: Dry::Matcher::Case.new(
+      match: ->(result) {
+        result.success? && result[:model].try(:destroyed?)
+      },
+      resolve: ->(result) { result }
+    ),
+    forbidden: Dry::Matcher::Case.new(
+      match: ->(result) {
+        result.failure? && result['result.policy.default']&.failure?
+      },
+      resolve: ->(result) { result }
     )
   )
 

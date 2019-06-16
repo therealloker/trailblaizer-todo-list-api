@@ -1,3 +1,4 @@
 en:
   errors:
     unauthenticated: Authentication failed
+    email_unique?: Email already exist

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-module V1
   module Authentication
     def self.included(base)
       base.class_eval do
@@ -41,4 +40,3 @@ module V1
 
     class UnauthorizedError < StandardError; end
   end
-end
