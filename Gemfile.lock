@@ -290,6 +290,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   database_cleaner
   dox
+  dry-configurable
   dry-validation (~> 0.13.3)
   factory_bot_rails
   ffaker
