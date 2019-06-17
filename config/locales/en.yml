@@ -2,3 +2,4 @@ en:
   errors:
     unauthenticated: Authentication failed
     email_unique?: Email already exist
+    file_not_found: Documentation api-file not build yet or requested api version not exists.
