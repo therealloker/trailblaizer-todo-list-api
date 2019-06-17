@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'V1::Users::Registrations API', type: :request do
   include Docs::V1::Users::Registrations::Api
 

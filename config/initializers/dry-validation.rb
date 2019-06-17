@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'dry/validation/schema/form'
 
 Dry::Validation::Schema.configure do |config|

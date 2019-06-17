@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module V1::Lib::Representer
   class ErrorRepresenter < JSONAPI::Serializable::Error
     detail do
