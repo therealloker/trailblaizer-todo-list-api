@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationEndpoint < Trailblazer::Endpoint
   Matcher = Dry::Matcher.new(
     forbidden: Dry::Matcher::Case.new(
@@ -18,7 +20,7 @@ class ApplicationEndpoint < Trailblazer::Endpoint
       resolve: ->(result) { result }
     ),
     created: Dry::Matcher::Case.new(
-      match:   ->(result) { result.success? && result['model.action'] == :new  },
+      match: ->(result) { result.success? && result['model.action'] == :new },
       resolve: ->(result) { result }
     ),
     destroyed: Dry::Matcher::Case.new(

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Api::DocSelectorService do
   describe '.call' do
     let(:version) { FFaker::Internet.domain_word }
@@ -7,7 +9,7 @@ RSpec.describe Api::DocSelectorService do
     end
 
     it do
-      expect(described_class.call(version).to_s).to match(/docs\/#{version}.html/)
+      expect(described_class.call(version).to_s).to match(%r{docs/#{version}.html})
     end
   end
 end

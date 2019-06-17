@@ -1,34 +1,34 @@
 # frozen_string_literal: true
 
-  module DefaultEndpoint
+module DefaultEndpoint
     protected
 
-    def default_handler
-      lambda do |match|
-        match.created { |result| result[:renderer_options] ? render_response(result, :created) : head(:created) }
-        match.destroyed { head(:no_content) }
-        match.forbidden { head(:forbidden) }
-        match.forbidden { |_result| head(:forbidden) }
-        match.invalid { |result| render_errors(result, :unprocessable_entity) }
-        match.success { |result| render_response(result, :ok) }
-      end
+  def default_handler
+    lambda do |match|
+      match.created { |result| result[:renderer_options] ? render_response(result, :created) : head(:created) }
+      match.destroyed { head(:no_content) }
+      match.forbidden { head(:forbidden) }
+      match.forbidden { |_result| head(:forbidden) }
+      match.invalid { |result| render_errors(result, :unprocessable_entity) }
+      match.success { |result| render_response(result, :ok) }
     end
+  end
 
-    def endpoint(operation_class, options = {}, &block)
-      ApplicationEndpoint.call(operation_class, default_handler, { **options, params: params.to_unsafe_hash }, &block)
-    end
+  def endpoint(operation_class, options = {}, &block)
+    ApplicationEndpoint.call(operation_class, default_handler, { **options, params: params.to_unsafe_hash }, &block)
+  end
 
     private
 
-    def render_errors(result, status)
-      render jsonapi_errors: result['contract.default'].errors,
-            class: {
-              'Reform::Contract::Errors': V1::Lib::Representer::ReformErrorsSerializer
-            },
-            status: status
-    end
+  def render_errors(result, status)
+    render jsonapi_errors: result['contract.default'].errors,
+           class: {
+             'Reform::Contract::Errors': V1::Lib::Representer::ReformErrorsSerializer
+           },
+           status: status
+  end
 
-    def render_response(result, status)
-      render jsonapi: result[:model], **result[:renderer_options], include: params[:include], status: status
-    end
+  def render_response(result, status)
+    render jsonapi: result[:model], **result[:renderer_options], include: params[:include], status: status
+  end
   end

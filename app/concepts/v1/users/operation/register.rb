@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module V1::Users::Operation
   class Register < Trailblazer::Operation
     step Model(User, :new)
