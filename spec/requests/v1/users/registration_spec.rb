@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'V1::Users::Registrations API', type: :request do
-  # include Docs::V1::Users::Registrations::Api
+  include Docs::V1::Users::Registrations::Api
 
   let(:user) { build(:user) }
   let!(:valid_attributes) { attributes_for(:user, password_confirmation: user.password) }
 
   describe 'POST /api/users/registration' do
-    # include Docs::V1::Users::Registrations::Create
+    include Docs::V1::Users::Registrations::Signup
 
     context 'valid request' do
       before { post '/api/users/registration', params: valid_attributes.to_json, headers: { 'Content-Type': 'application/json' } }
