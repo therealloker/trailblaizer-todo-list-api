@@ -13,7 +13,7 @@ module Docs
           end
         end
 
-        document :create do
+        document :signup do
           action 'Sign Up'
         end
       end
