@@ -41,6 +41,7 @@ RSpec.configure do |config|
 end
 
 Dir[Rails.root.join('spec/docs/**/*.rb')].each { |file| require file }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 Dox.configure do |config|
   config.header_file_path = Rails.root.join('spec/docs/v1/descriptions/header.md')
