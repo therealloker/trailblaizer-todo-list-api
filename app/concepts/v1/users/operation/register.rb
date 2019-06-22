@@ -9,11 +9,7 @@ module V1::Users::Operation
     step :renderer_options
 
     def renderer_options(ctx, **)
-      ctx[:renderer_options] = {
-        class: {
-          User: V1::Users::Representer::Register
-        }
-      }
+      ctx[:renderer_options] = { class: { User: V1::Users::Representer::Register } }
     end
   end
 end

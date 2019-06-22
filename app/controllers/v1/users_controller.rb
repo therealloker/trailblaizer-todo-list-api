@@ -5,5 +5,9 @@ module V1
     def registration
       endpoint V1::Users::Operation::Register
     end
+
+    def login
+      endpoint V1::Users::Operation::Login
+    end
   end
 end
