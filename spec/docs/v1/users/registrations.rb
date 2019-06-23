@@ -7,7 +7,7 @@ module Docs
         extend Dox::DSL::Syntax
 
         document :api do
-          resource 'Create action' do
+          resource 'Registration action' do
             endpoint '/users/registration'
             group 'User registration'
           end
