@@ -3,12 +3,8 @@
 module V1::Projects::Operation
   class Show < Trailblazer::Operation
     step Policy::Guard(V1::Projects::Lib::Policy::AccessGuard.new), fail_fast: true
-    step :find
+    step Model(Project, :find)
     step :renderer_options
-
-    def find(ctx, params:, **)
-      ctx[:model] = Project.find(params[:id])
-    end
 
     def renderer_options(ctx, **)
       ctx[:renderer_options] = {

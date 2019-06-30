@@ -20,6 +20,7 @@ module V1
     end
 
     def destroy
+      endpoint V1::Projects::Operation::Destroy, current_user: current_user
     end
   end
 end
