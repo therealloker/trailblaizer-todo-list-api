@@ -8,6 +8,7 @@ module V1
     end
 
     def create
+      endpoint V1::Projects::Operation::Create, current_user: current_user
     end
 
     def show

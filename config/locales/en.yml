@@ -4,3 +4,4 @@ en:
     email_unique?: Email already been taken
     file_not_found: Documentation api-file not build yet or requested api version not exists.
     invalid_credentials: You shall not pass
+    project_name_unique?: You are already have project with such name

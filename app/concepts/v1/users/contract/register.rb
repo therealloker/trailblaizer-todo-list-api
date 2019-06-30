@@ -20,7 +20,6 @@ module V1::Users::Contract
     validation :email_unique, if: :default do
       configure do
         config.messages = :i18n
-        config.namespace = :user
 
         def email_unique?(email)
           User.where(email: email).empty?

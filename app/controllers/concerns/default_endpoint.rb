@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module DefaultEndpoint
-    protected
+  protected
 
   def default_handler
     lambda do |match|
@@ -18,7 +18,7 @@ module DefaultEndpoint
     ApplicationEndpoint.call(operation_class, default_handler, { **options, params: params.to_unsafe_hash }, &block)
   end
 
-    private
+  private
 
   def render_errors(result, status)
     render jsonapi_errors: result['contract.default'].errors,
@@ -31,4 +31,4 @@ module DefaultEndpoint
   def render_response(result, status)
     render jsonapi: result[:model], **result[:renderer_options], include: params[:include], status: status
   end
-  end
+end
