@@ -28,12 +28,6 @@ class ApplicationEndpoint < Trailblazer::Endpoint
         result.success? && result[:model].try(:destroyed?)
       },
       resolve: ->(result) { result }
-    ),
-    forbidden: Dry::Matcher::Case.new(
-      match: ->(result) {
-        result.failure? && result['result.policy.default']&.failure?
-      },
-      resolve: ->(result) { result }
     )
   )
 

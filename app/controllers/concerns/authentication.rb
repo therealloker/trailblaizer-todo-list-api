@@ -11,7 +11,7 @@ module Authentication
 
   def authorize_request!
     auth_header = request.headers['Authorization']
-    token = auth_header.split(' ').last
+    token = auth_header&.split(' ')&.last
     @auth_payload = V1::Lib::Auth::JsonWebToken.decode(token)[0]
     raise UnauthorizedError if invalid_payload?
   rescue JWT::DecodeError

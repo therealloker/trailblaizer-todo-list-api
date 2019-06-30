@@ -19,7 +19,7 @@ module V1::Lib::Representer
 
     def compose_errors(messages, field)
       messages.map do |message|
-        Lib::Representer::ErrorRepresenter.new(field: field, message: message).as_jsonapi
+        V1::Lib::Representer::ErrorRepresenter.new(field: field, message: message).as_jsonapi
       end
     end
   end
