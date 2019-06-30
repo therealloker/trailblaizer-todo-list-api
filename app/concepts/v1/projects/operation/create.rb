@@ -14,7 +14,11 @@ module V1::Projects::Operation
     end
 
     def renderer_options(ctx, **)
-      ctx[:renderer_options] = { class: { Project: V1::Projects::Representer::Create } }
+      ctx[:renderer_options] = {
+        class: {
+          Project: V1::Projects::Representer::Create
+        }
+      }
     end
   end
 end

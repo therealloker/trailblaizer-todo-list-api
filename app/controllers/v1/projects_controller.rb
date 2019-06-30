@@ -5,6 +5,7 @@ module V1
     before_action :authorize_request!
 
     def index
+      endpoint V1::Projects::Operation::Index, current_user: current_user
     end
 
     def create

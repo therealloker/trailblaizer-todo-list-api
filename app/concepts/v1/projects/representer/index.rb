@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module V1::Projects::Representer
-  class Create < ApplicationRepresenter
+  class Index < ApplicationRepresenter
     type 'projects'
 
     attributes :name
