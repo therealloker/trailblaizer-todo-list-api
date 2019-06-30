@@ -13,6 +13,7 @@ module V1
     end
 
     def show
+      endpoint V1::Projects::Operation::Show, current_user: current_user
     end
 
     def update
