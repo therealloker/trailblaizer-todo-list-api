@@ -76,8 +76,7 @@ RSpec/MessageSpies:
   EnforcedStyle: receive
 
 RSpec/ContextWording:
-  Exclude:
-    - 'spec/models/**/*.rb'
+  Enabled: false
 
 RSpec/ImplicitSubject:
   Exclude:
