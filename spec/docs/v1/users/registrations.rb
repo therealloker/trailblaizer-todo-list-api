@@ -9,7 +9,7 @@ module Docs
         document :api do
           resource 'Registration action' do
             endpoint '/users/registration'
-            group 'User registration'
+            group 'Users'
           end
         end
 
