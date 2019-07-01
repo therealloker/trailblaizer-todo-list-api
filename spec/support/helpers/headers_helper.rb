@@ -8,16 +8,10 @@ module HeadersHelper
   end
 
   def valid_token_headers(user_id)
-    {
-      'Content-Type': 'application/json',
-      'Authorization': V1::Lib::Auth::JsonWebToken.encode(user_id: user_id)
-    }
+    default_header.merge('Authorization': V1::Lib::Auth::JsonWebToken.encode(user_id: user_id))
   end
 
   def invalid_token_headers(user_id)
-    {
-      'Content-Type': 'application/json',
-      'Authorization': V1::Lib::Auth::JsonWebToken.encode({ user_id: user_id }, Time.now.to_i - 10)
-    }
+    default_header.merge('Authorization': V1::Lib::Auth::JsonWebToken.encode({ user_id: user_id }, Time.now.to_i - 10))
   end
 end

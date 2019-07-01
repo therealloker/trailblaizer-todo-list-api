@@ -9,7 +9,7 @@ module Docs
         document :api do
           resource 'Login action' do
             endpoint '/users/login'
-            group 'User login'
+            group 'Users'
           end
         end
 
