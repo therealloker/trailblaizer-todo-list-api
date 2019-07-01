@@ -17,6 +17,7 @@ module V1
     end
 
     def update
+      endpoint V1::Projects::Operation::Update, current_user: current_user
     end
 
     def destroy
