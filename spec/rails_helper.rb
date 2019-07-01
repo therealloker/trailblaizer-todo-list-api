@@ -27,12 +27,15 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include FactoryBot::Syntax::Methods
+  config.include HeadersHelper
 
   config.after(:each, :dox) do |example|
     example.metadata[:request] = request
@@ -41,7 +44,6 @@ RSpec.configure do |config|
 end
 
 Dir[Rails.root.join('spec/docs/**/*.rb')].each { |file| require file }
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 Dox.configure do |config|
   config.header_file_path = Rails.root.join('spec/docs/v1/descriptions/header.md')

@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 RSpec.describe 'V1::Users API', type: :request do
-  let(:headers) { { 'Content-Type': 'application/json' } }
-
   describe 'POST /api/users/registration' do
     include Docs::V1::Users::Registrations::Api
     include Docs::V1::Users::Registrations::Signup
@@ -12,7 +10,7 @@ RSpec.describe 'V1::Users API', type: :request do
 
     context 'valid request' do
       before do
-        post '/api/users/registration', params: valid_attributes, headers: headers
+        post '/api/users/registration', params: valid_attributes, headers: default_header
       end
 
       it 'sign up success', :dox do
@@ -46,7 +44,7 @@ RSpec.describe 'V1::Users API', type: :request do
       let(:valid_attributes) { { email: user.email, password: user.password }.to_json }
 
       before do
-        post '/api/users/login', params: valid_attributes, headers: headers
+        post '/api/users/login', params: valid_attributes, headers: default_header
       end
 
       it 'sign in success', :dox do
@@ -61,7 +59,7 @@ RSpec.describe 'V1::Users API', type: :request do
     context 'invalid request' do
       let(:invalid_attributes) { { email: 'buffalobill@mail.com', password: 'lambs123' }.to_json }
 
-      before { post '/api/users/login', params: invalid_attributes, headers: headers }
+      before { post '/api/users/login', params: invalid_attributes, headers: default_header }
 
       it 'login fails', :dox do
         expect(response).to be_unprocessable
