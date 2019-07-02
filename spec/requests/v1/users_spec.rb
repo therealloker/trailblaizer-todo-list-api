@@ -48,7 +48,7 @@ RSpec.describe 'V1::Users API', type: :request do
       end
 
       it 'sign in success', :dox do
-        expect(response).to be_success
+        expect(response).to be_successful
       end
 
       it 'returns a new generated token for the user' do

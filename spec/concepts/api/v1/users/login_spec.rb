@@ -22,7 +22,7 @@ RSpec.describe V1::Users::Operation::Login do
 
   describe 'Fail' do
     let(:errors) { { user: ['You shall not pass'] } }
-    
+
     context 'empty keys' do
       let(:params) { {} }
       let(:errors) do
