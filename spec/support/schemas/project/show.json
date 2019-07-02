@@ -1,0 +1,147 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "data",
+    "jsonapi"
+  ],
+  "properties": {
+    "data": {
+      "$id": "#/properties/data",
+      "type": "object",
+      "title": "The Data Schema",
+      "required": [
+        "id",
+        "type",
+        "attributes",
+        "relationships",
+        "links"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/data/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "5"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "type": {
+          "$id": "#/properties/data/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "projects"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "attributes": {
+          "$id": "#/properties/data/properties/attributes",
+          "type": "object",
+          "title": "The Attributes Schema",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "$id": "#/properties/data/properties/attributes/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": [
+                "New Project name"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "relationships": {
+          "$id": "#/properties/data/properties/relationships",
+          "type": "object",
+          "title": "The Relationships Schema",
+          "required": [
+            "tasks"
+          ],
+          "properties": {
+            "tasks": {
+              "$id": "#/properties/data/properties/relationships/properties/tasks",
+              "type": "object",
+              "title": "The Tasks Schema",
+              "required": [
+                "links"
+              ],
+              "properties": {
+                "links": {
+                  "$id": "#/properties/data/properties/relationships/properties/tasks/properties/links",
+                  "type": "object",
+                  "title": "The Links Schema",
+                  "required": [
+                    "related"
+                  ],
+                  "properties": {
+                    "related": {
+                      "$id": "#/properties/data/properties/relationships/properties/tasks/properties/links/properties/related",
+                      "type": "string",
+                      "title": "The Related Schema",
+                      "default": "",
+                      "examples": [
+                        "/api/projects/5/tasks"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "links": {
+          "$id": "#/properties/data/properties/links",
+          "type": "object",
+          "title": "The Links Schema",
+          "required": [
+            "self"
+          ],
+          "properties": {
+            "self": {
+              "$id": "#/properties/data/properties/links/properties/self",
+              "type": "string",
+              "title": "The Self Schema",
+              "default": "",
+              "examples": [
+                "/api/projects/5"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "jsonapi": {
+      "$id": "#/properties/jsonapi",
+      "type": "object",
+      "title": "The Jsonapi Schema",
+      "required": [
+        "version"
+      ],
+      "properties": {
+        "version": {
+          "$id": "#/properties/jsonapi/properties/version",
+          "type": "string",
+          "title": "The Version Schema",
+          "default": "",
+          "examples": [
+            "1.0"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}
