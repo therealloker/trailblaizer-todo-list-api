@@ -9,6 +9,7 @@ module V1::Projects::Contract
 
     validation :default do
       required(:name).filled
+      required(:user_id).filled(:int?)
     end
 
     validation :project_name_unique, with: { form: true }, if: :default do
