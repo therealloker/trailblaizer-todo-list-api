@@ -86,30 +86,29 @@ RSpec.describe 'V1::Users API', type: :request do
     end
   end
 
-    describe 'POST /api/projects' do
-    include Docs::V1::Projects::Create::Api
-    include Docs::V1::Projects::Create::Create
+  describe 'GET /api/projects/:id' do
+    include Docs::V1::Projects::Show::Api
+    include Docs::V1::Projects::Show::Get
 
-    let(:user) { create(:user) }
-    let!(:valid_attributes) { attributes_for(:project).to_json }
+    let(:project) { create(:project, user: user) }
 
     context 'valid request' do
       before do
-        post '/api/projects', params: valid_attributes, headers: valid_token_headers(user.id)
+        get "/api/projects/#{project.id}", headers: valid_token_headers(user.id)
       end
 
-      it 'project create success', :dox do
-        expect(response).to be_created
+      it 'gets a project success', :dox do
+        expect(response).to be_successful
       end
 
-      it 'creates a new project' do
-        expect(response).to match_json_schema('project/create')
+      it 'returns projects list' do
+        expect(response).to match_json_schema('project/show')
       end
     end
 
     context 'invalid request' do
       context 'invalid token' do
-        before { post '/api/projects', params: valid_attributes, headers: invalid_token_headers(user.id) }
+        before { get "/api/projects/#{project.id}", headers: invalid_token_headers(user.id) }
 
         it 'returns 401' do
           expect(response).to have_http_status :unauthorized
@@ -120,17 +119,13 @@ RSpec.describe 'V1::Users API', type: :request do
         end
       end
 
-      context 'invalid attributes' do
-        let(:invalid_attributes) { { name: '' }.to_json }
+      context 'not users project' do
+        let(:another_project) { create(:project) }
 
-        before { post '/api/projects', params: invalid_attributes, headers: valid_token_headers(user.id) }
+        before { get "/api/projects/#{another_project.id}", headers: valid_token_headers(user.id) }
 
-        it 'creating fails', :dox do
-          expect(response).to be_unprocessable
-        end
-
-        it 'returns error' do
-          expect(response).to match_json_schema('errors')
+        it 'returns 403' do
+          expect(response).to have_http_status :forbidden
         end
       end
     end
