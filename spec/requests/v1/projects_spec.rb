@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'V1::Users API', type: :request do
+RSpec.describe 'V1::Projects API', type: :request do
   let(:user) { create(:user) }
   let(:project) { create(:project, user: user) }
 
@@ -14,7 +14,7 @@ RSpec.describe 'V1::Users API', type: :request do
         get '/api/projects', headers: valid_token_headers(user.id)
       end
 
-      it 'gets projects success', :dox do
+      it 'response projects success', :dox do
         expect(response).to be_successful
       end
 
@@ -100,7 +100,7 @@ RSpec.describe 'V1::Users API', type: :request do
         expect(response).to be_successful
       end
 
-      it 'returns projects list' do
+      it 'returns project' do
         expect(response).to match_json_schema('project/show')
       end
     end
@@ -177,10 +177,10 @@ RSpec.describe 'V1::Users API', type: :request do
         end
       end
 
-      context 'not users project' do
-        let(:another_project) { create(:project) }
+      context 'project does not relate to user' do
+        let(:project) { create(:project) }
 
-        before { patch "/api/projects/#{another_project.id}", headers: valid_token_headers(user.id) }
+        before { patch "/api/projects/#{project.id}", headers: valid_token_headers(user.id) }
 
         it 'returns 403' do
           expect(response).to have_http_status :forbidden
