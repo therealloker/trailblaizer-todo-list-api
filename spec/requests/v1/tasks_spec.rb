@@ -217,4 +217,45 @@ RSpec.describe 'V1::Tasks API', type: :request do
       end
     end
   end
+
+  describe 'DELETE /api/projects/:id' do
+    include Docs::V1::Tasks::Destroy::Api
+    include Docs::V1::Tasks::Destroy::Delete
+
+    let(:task) { create(:task, project: project) }
+
+    context 'valid request' do
+      before do
+        delete "/api/tasks/#{task.id}", headers: valid_token_headers(user.id)
+      end
+
+      it 'project delete success', :dox do
+        expect(response).to have_http_status :no_content
+      end
+    end
+
+    context 'invalid request' do
+      context 'invalid token' do
+        before { delete "/api/tasks/#{task.id}", headers: invalid_token_headers(user.id) }
+
+        it 'returns 401' do
+          expect(response).to have_http_status :unauthorized
+        end
+
+        it 'returns error' do
+          expect(response).to match_json_schema('errors')
+        end
+      end
+
+      context 'task does not relate to user' do
+        let(:task) { create(:task) }
+
+        before { delete "/api/tasks/#{task.id}", headers: valid_token_headers(user.id) }
+
+        it 'returns 403' do
+          expect(response).to have_http_status :forbidden
+        end
+      end
+    end
+  end
 end

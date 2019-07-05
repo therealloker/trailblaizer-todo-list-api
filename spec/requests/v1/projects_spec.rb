@@ -189,7 +189,7 @@ RSpec.describe 'V1::Projects API', type: :request do
     end
   end
 
-  describe 'PATCH /api/projects/:id' do
+  describe 'DELETE /api/projects/:id' do
     include Docs::V1::Projects::Destroy::Api
     include Docs::V1::Projects::Destroy::Delete
 
@@ -217,9 +217,9 @@ RSpec.describe 'V1::Projects API', type: :request do
       end
 
       context 'not users project' do
-        let(:another_project) { create(:project) }
+        let(:project) { create(:project) }
 
-        before { delete "/api/projects/#{another_project.id}", headers: valid_token_headers(user.id) }
+        before { delete "/api/projects/#{project.id}", headers: valid_token_headers(user.id) }
 
         it 'returns 403' do
           expect(response).to have_http_status :forbidden
