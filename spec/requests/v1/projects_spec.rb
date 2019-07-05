@@ -180,7 +180,7 @@ RSpec.describe 'V1::Projects API', type: :request do
       context 'project does not relate to user' do
         let(:project) { create(:project) }
 
-        before { patch "/api/projects/#{project.id}", headers: valid_token_headers(user.id) }
+        before { patch "/api/projects/#{project.id}", params: valid_attributes, headers: valid_token_headers(user.id) }
 
         it 'returns 403' do
           expect(response).to have_http_status :forbidden

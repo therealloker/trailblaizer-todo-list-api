@@ -17,7 +17,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjIzODI2NDh9.KjLuZwRbF0TL5zDRzQDhUxjjpovE6L0xK9ju9AZV5dQ
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjI0OTgwNTJ9.HbSMM3XJrHbMFXpjHq-fmh0ckd2jZa-LjDgKODoXpTg
             Content-Type: application/json
 
 + Response 200
@@ -34,7 +34,7 @@ This api is implemented according to the JSON API spec.
                   "id": "1",
                   "type": "projects",
                   "attributes": {
-                    "name": "id"
+                    "name": "vitae"
                   },
                   "links": {
                     "self": "/api/projects/1"
@@ -44,7 +44,7 @@ This api is implemented according to the JSON API spec.
                   "id": "2",
                   "type": "projects",
                   "attributes": {
-                    "name": "esse"
+                    "name": "id"
                   },
                   "links": {
                     "self": "/api/projects/2"
@@ -65,13 +65,13 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NjIzODI2NDh9.rLD5lCg4livNPmM_DdwnajQdXT8x44rmqc5hQ1AYPqY
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NjI0OTgwNTJ9.AAs7MYd28Stid0HJisvviebQr2xzZby6QEIF4q8JfaY
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "tenetur"
+              "name": "suscipit"
             }
 
 + Response 201
@@ -87,7 +87,7 @@ This api is implemented according to the JSON API spec.
                 "id": "3",
                 "type": "projects",
                 "attributes": {
-                  "name": "tenetur"
+                  "name": "suscipit"
                 },
                 "links": {
                   "self": "/api/projects/3"
@@ -104,7 +104,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NjIzODI2NDh9.4htEzddaqNb-00UcYew1N4jdxNp3yJHKQQHVgg7H-SY
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NjI0OTgwNTJ9.UC4sSepjjElyszS7m2FmpJxuSYOdYPDXut7skwvl_Q0
             Content-Type: application/json
 
     + Body
@@ -146,7 +146,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1NjIzODI2NDh9.VGwu9dFLP9eYhIMArj9E6qixa_ygIeZV9vaurJd8CvQ
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1NjI0OTgwNTJ9.fBJXkfcsaclZTo-uUwZ3lqnaACVgexml2yBjeZeuIag
             Content-Type: application/json
 
 + Response 200
@@ -162,7 +162,7 @@ This api is implemented according to the JSON API spec.
                 "id": "4",
                 "type": "projects",
                 "attributes": {
-                  "name": "dolorum"
+                  "name": "fugit"
                 },
                 "relationships": {
                   "tasks": {
@@ -191,13 +191,13 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1NjIzODI2NDh9.gLRuL-58MDY55-LwDhfYK7ovq6kyoX6AohQwScH6xOw
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1NjI0OTgwNTJ9.jjg16W_14fsoiXuhmUriMI7wL-WBfXyaS0SbAJtg_jI
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "saepe"
+              "name": "molestiae"
             }
 
 + Response 200
@@ -213,7 +213,7 @@ This api is implemented according to the JSON API spec.
                 "id": "5",
                 "type": "projects",
                 "attributes": {
-                  "name": "saepe"
+                  "name": "molestiae"
                 },
                 "relationships": {
                   "tasks": {
@@ -237,7 +237,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE1NjIzODI2NDh9.7rm3sBbcvji9IY5mjACXjKtGu_noOLCw5WWagrtqpmQ
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE1NjI0OTgwNTJ9.no2rPy6JUnXg3iKXVXOxWnnDlj-OHLX9TPJqx2fCvNk
             Content-Type: application/json
 
     + Body
@@ -279,7 +279,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1NjIzODI2NDh9.0JrtCQHCtg01EoIRfnsEeeIvKZZ4StWEh2a4yRmA-0I
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1NjI0OTgwNTJ9.P5kXDWSRtfz87jveDVMgpEjpQTKNLUPClua1HHM37F8
             Content-Type: application/json
 
 + Response 204
@@ -301,7 +301,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE1NjIzODI2NDh9.FmLZHOc0yWfA-63Cn9qMhVTDa6_xilu_6pkG6p8OXb0
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE1NjI0OTgwNTJ9.99xlF5-GVRIo59gBhnN3AK-k6mHfT2v85fyQzMj2alI
             Content-Type: application/json
 
 + Response 200
@@ -318,7 +318,7 @@ This api is implemented according to the JSON API spec.
                   "id": "1",
                   "type": "tasks",
                   "attributes": {
-                    "name": "minima"
+                    "name": "et"
                   },
                   "links": {
                     "self": "/api/tasks/1"
@@ -328,7 +328,7 @@ This api is implemented according to the JSON API spec.
                   "id": "2",
                   "type": "tasks",
                   "attributes": {
-                    "name": "quibusdam"
+                    "name": "error"
                   },
                   "links": {
                     "self": "/api/tasks/2"
@@ -351,13 +351,13 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1NjIzODI2NDh9.ud4hQoeanDE_qQqu4imXgg6vB3qSDOvveJnw-QfHNVw
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1NjI0OTgwNTJ9.gj6EmJA5Lw7mlDMr0PldXl_aSrI0DGjMTiPVn-nh4Fk
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "modi"
+              "name": "quia"
             }
 
 + Response 201
@@ -373,7 +373,7 @@ This api is implemented according to the JSON API spec.
                 "id": "3",
                 "type": "tasks",
                 "attributes": {
-                  "name": "modi"
+                  "name": "quia"
                 },
                 "links": {
                   "self": "/api/tasks/3"
@@ -390,7 +390,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNTYyMzgyNjQ4fQ.6pyUvAYalJZ3MUbXFMSTJUGUOACSLu0It3yP7ffupnk
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNTYyNDk4MDUyfQ.HfWt48DHyfwjYW0uRJtWWGOIuxsigxhBw5K7lqeohPM
             Content-Type: application/json
 
     + Body
@@ -432,7 +432,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNTYyMzgyNjQ4fQ.V4uKgm21w02c48RpriVFp7cmqdIdVEfMKf3A6BvYeM4
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNTYyNDk4MDUyfQ.UZboz3JgFOrM-2xMQ7XOIvPZ5UiyFt7bWAsPEu4BF8U
             Content-Type: application/json
 
 + Response 200
@@ -448,7 +448,7 @@ This api is implemented according to the JSON API spec.
                 "id": "4",
                 "type": "tasks",
                 "attributes": {
-                  "name": "architecto"
+                  "name": "in"
                 },
                 "relationships": {
                   "project": {
@@ -461,6 +461,94 @@ This api is implemented according to the JSON API spec.
                   "self": "/api/tasks/4"
                 }
               },
+              "jsonapi": {
+                "version": "1.0"
+              }
+            }
+
+### Update [PATCH /api/tasks/{id}]
+
++ Parameters
+    + id: `5` (number, required)
+
++ Request task update success
+**PATCH**&nbsp;&nbsp;`/api/tasks/5`
+
+    + Headers
+
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTYyNDk4MDUyfQ.f-yLiTj8oB7WInY2C0lD4epttW4VHBIEINgvz-yrEh8
+            Content-Type: application/json
+
+    + Body
+
+            {
+              "name": "expedita"
+            }
+
++ Response 200
+
+    + Headers
+
+            Content-Type: application/vnd.api+json
+
+    + Body
+
+            {
+              "data": {
+                "id": "5",
+                "type": "tasks",
+                "attributes": {
+                  "name": "expedita"
+                },
+                "relationships": {
+                  "project": {
+                    "links": {
+                      "self": "/api/projects/12"
+                    }
+                  }
+                },
+                "links": {
+                  "self": "/api/tasks/5"
+                }
+              },
+              "jsonapi": {
+                "version": "1.0"
+              }
+            }
+
++ Request updating fails
+**PATCH**&nbsp;&nbsp;`/api/tasks/6`
+
+    + Headers
+
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNTYyNDk4MDUyfQ.twZka444jWAWdtdkc3faV_HxnHkiXiNd0JrlxmGMnB8
+            Content-Type: application/json
+
+    + Body
+
+            {
+              "name": ""
+            }
+
++ Response 422
+
+    + Headers
+
+            Content-Type: application/vnd.api+json
+
+    + Body
+
+            {
+              "errors": [
+                {
+                  "detail": "must be filled",
+                  "source": {
+                    "pointer": "/data/attributes/name"
+                  }
+                }
+              ],
               "jsonapi": {
                 "version": "1.0"
               }
@@ -486,7 +574,7 @@ This api is implemented according to the JSON API spec.
     + Body
 
             {
-              "email": "test-email13@email.com",
+              "email": "test-email15@email.com",
               "password": "Password1",
               "password_confirmation": "Password1"
             }
@@ -501,10 +589,10 @@ This api is implemented according to the JSON API spec.
 
             {
               "data": {
-                "id": "12",
+                "id": "14",
                 "type": "users",
                 "attributes": {
-                  "email": "test-email13@email.com"
+                  "email": "test-email15@email.com"
                 }
               },
               "jsonapi": {
@@ -571,7 +659,7 @@ This api is implemented according to the JSON API spec.
     + Body
 
             {
-              "email": "test-email16@email.com",
+              "email": "test-email18@email.com",
               "password": "Password1"
             }
 
@@ -585,14 +673,14 @@ This api is implemented according to the JSON API spec.
 
             {
               "data": {
-                "id": "13",
+                "id": "15",
                 "type": "users",
                 "attributes": {
-                  "email": "test-email16@email.com"
+                  "email": "test-email18@email.com"
                 }
               },
               "meta": {
-                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNTYyMzgyNjQ4fQ.d1Dnr25RCJRcGUOlu-NgXJuU7GFIVRIfOnnJz6cHkXI"
+                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwiZXhwIjoxNTYyNDk4MDUyfQ.3B26Xti8rIsAb-FcVYu6m5nhsehHiPzrrS2wkN6osRw"
               },
               "jsonapi": {
                 "version": "1.0"

@@ -3,7 +3,7 @@
 module V1::Tasks::Operation
   class Update < Trailblazer::Operation
     step Policy::Guard(V1::Tasks::Lib::Policy::TaskAccessGuard.new), fail_fast: true
-    step Model(Project, :find)
+    step Model(Task, :find)
     step Contract::Build(constant: V1::Tasks::Contract::Update)
     step Contract::Validate()
     step Contract::Persist()
