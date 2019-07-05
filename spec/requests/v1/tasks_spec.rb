@@ -157,4 +157,64 @@ RSpec.describe 'V1::Tasks API', type: :request do
       end
     end
   end
+
+  describe 'PATCH /api/tasks/:id' do
+    include Docs::V1::Tasks::Update::Api
+    include Docs::V1::Tasks::Update::Update
+
+    let(:task) { create(:task, project: project) }
+    let(:valid_attributes) { attributes_for(:task).to_json }
+
+    context 'valid request' do
+      before do
+        patch "/api/tasks/#{task.id}", params: valid_attributes, headers: valid_token_headers(user.id)
+      end
+
+      it 'task update success', :dox do
+        expect(response).to be_successful
+      end
+
+      it 'returns the updated task' do
+        expect(response).to match_json_schema('task/show')
+      end
+    end
+
+    context 'invalid request' do
+      context 'invalid token' do
+        before { patch "/api/tasks/#{task.id}", params: valid_attributes, headers: invalid_token_headers(user.id) }
+
+        it 'returns 401' do
+          expect(response).to have_http_status :unauthorized
+        end
+
+        it 'returns error' do
+          expect(response).to match_json_schema('errors')
+        end
+      end
+
+      context 'invalid attributes' do
+        let(:invalid_attributes) { { name: '' }.to_json }
+
+        before { patch "/api/tasks/#{task.id}", params: invalid_attributes, headers: valid_token_headers(user.id) }
+
+        it 'updating fails', :dox do
+          expect(response).to be_unprocessable
+        end
+
+        it 'returns error' do
+          expect(response).to match_json_schema('errors')
+        end
+      end
+
+      context 'task does not relate to user' do
+        let(:task) { create(:task) }
+
+        before { patch "/api/tasks/#{task.id}", params: valid_attributes, headers: valid_token_headers(user.id) }
+
+        it 'returns 403' do
+          expect(response).to have_http_status :forbidden
+        end
+      end
+    end
+  end
 end
