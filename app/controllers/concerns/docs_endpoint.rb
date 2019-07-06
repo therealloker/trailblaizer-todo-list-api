@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DocsEndpoint
   def documentation_handler
     lambda do |match|

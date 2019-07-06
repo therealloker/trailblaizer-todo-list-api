@@ -8,7 +8,7 @@ module V1::Tasks::Operation
     step Contract::Validate()
     step Contract::Persist()
     step :renderer_options
- 
+
     def renderer_options(ctx, **)
       ctx[:renderer_options] = {
         class: {
