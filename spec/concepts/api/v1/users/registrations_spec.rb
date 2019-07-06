@@ -24,7 +24,7 @@ RSpec.describe V1::Users::Operation::Register do
   end
 
   describe 'Fail' do
-    context 'empty keys' do
+    context 'when keys are empty' do
       let(:params) { {} }
       let(:errors) do
         {
@@ -36,14 +36,14 @@ RSpec.describe V1::Users::Operation::Register do
       include_examples 'has validation errors'
     end
 
-    context 'different passwords' do
+    context 'when passwords are different' do
       let(:params) { valid_params.merge(password_confirmation: '') }
       let(:errors) { { password_confirmation: ['must be equal to Password1'] } }
 
       include_examples 'has validation errors'
     end
 
-    context 'email already exists' do
+    context 'when email already exists' do
       let(:existing_user) { create(:user) }
       let(:params) { valid_params.merge(email: existing_user.email) }
       let(:errors) { { email: ['Email already been taken'] } }

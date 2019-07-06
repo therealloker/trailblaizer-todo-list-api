@@ -4,4 +4,4 @@ en:
     email_unique?: Email already been taken
     file_not_found: Documentation api-file not build yet or requested api version not exists.
     invalid_credentials: You shall not pass
-    task_name_unique?: You are already have a task with such name
+    task_name_unique?: You already have a task with such name
