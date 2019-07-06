@@ -2,7 +2,7 @@
 
 module V1::Tasks::Operation
   class Destroy < Trailblazer::Operation
-    step Policy::Guard(V1::Tasks::Lib::Policy::TaskAccessGuard.new), fail_fast: true
+    step Policy::Guard(V1::Tasks::Lib::Policy::AccessGuard.new), fail_fast: true
     step Model(Task, :find)
     step :destroy
 

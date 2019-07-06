@@ -2,8 +2,8 @@
 
 module V1::Tasks::Query
   class Index
-    def self.call(project_id, relation = Task.all)
-      relation.where(project_id: project_id).order(:created_at)
+    def self.call(user_id, relation = Task.all)
+      relation.where(user_id: user_id).order(:created_at)
     end
   end
 end

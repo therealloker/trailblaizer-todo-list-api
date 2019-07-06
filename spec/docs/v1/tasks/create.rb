@@ -8,7 +8,7 @@ module Docs
 
         document :api do
           resource 'Tasks' do
-            endpoint '/projects/:id/tasks'
+            endpoint '/tasks'
             group 'Tasks'
           end
         end

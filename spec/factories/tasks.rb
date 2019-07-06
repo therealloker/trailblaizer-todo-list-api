@@ -3,6 +3,8 @@
 FactoryBot.define do
   factory :task do
     name { FFaker::Lorem.unique.word }
-    project
+    done { false }
+    important { false }
+    user
   end
 end
