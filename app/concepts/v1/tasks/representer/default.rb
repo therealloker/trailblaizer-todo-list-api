@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module V1::Tasks::Representer
-  class Index < ApplicationRepresenter
+  class Default < ApplicationRepresenter
     type 'tasks'
 
-    attributes :name
+    attributes :name, :done, :important
 
     link :self do
       @url_helpers.task_path(@object.id)

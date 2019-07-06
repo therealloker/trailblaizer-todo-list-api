@@ -13,9 +13,6 @@ Rails.application.routes.draw do
       post :login
     end
 
-    resources :projects do
-      resources :tasks, only: %i[index create]
-    end
-    resources :tasks, only: %i[show update destroy]
+    resources :tasks
   end
 end

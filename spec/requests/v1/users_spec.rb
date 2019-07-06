@@ -8,7 +8,7 @@ RSpec.describe 'V1::Users API', type: :request do
     let(:user) { build(:user) }
     let!(:valid_attributes) { attributes_for(:user, password_confirmation: user.password).to_json }
 
-    context 'valid request' do
+    context 'when request is valid' do
       before do
         post '/api/users/registration', params: valid_attributes, headers: default_header
       end
@@ -17,12 +17,12 @@ RSpec.describe 'V1::Users API', type: :request do
         expect(response).to be_created
       end
 
-      it 'creates a new user' do
-        expect(response).to match_json_schema('user/create')
+      it 'returns the created user' do
+        expect(response).to match_json_schema('users/create')
       end
     end
 
-    context 'invalid request' do
+    context 'when request is invalid' do
       before { post '/api/users/registration' }
 
       it 'sign up fails', :dox do
@@ -39,7 +39,7 @@ RSpec.describe 'V1::Users API', type: :request do
     include Docs::V1::Users::Login::Api
     include Docs::V1::Users::Login::Signin
 
-    context 'valid request' do
+    context 'when request is valid' do
       let!(:user) { create(:user) }
       let(:valid_attributes) { { email: user.email, password: user.password }.to_json }
 
@@ -52,11 +52,11 @@ RSpec.describe 'V1::Users API', type: :request do
       end
 
       it 'returns a new generated token for the user' do
-        expect(response).to match_json_schema('user/login')
+        expect(response).to match_json_schema('users/login')
       end
     end
 
-    context 'invalid request' do
+    context 'when request is invalid' do
       let(:invalid_attributes) { { email: 'buffalobill@mail.com', password: 'lambs123' }.to_json }
 
       before { post '/api/users/login', params: invalid_attributes, headers: default_header }

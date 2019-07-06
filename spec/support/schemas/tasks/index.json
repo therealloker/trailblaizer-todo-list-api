@@ -49,7 +49,9 @@
             "type": "object",
             "title": "The Attributes Schema",
             "required": [
-              "name"
+              "name",
+              "done",
+              "important"
             ],
             "properties": {
               "name": {
@@ -58,9 +60,27 @@
                 "title": "The Name Schema",
                 "default": "",
                 "examples": [
-                  "Foo"
+                  "Tafddffdfdknafmefd"
                 ],
                 "pattern": "^(.*)$"
+              },
+              "done": {
+                "$id": "#/properties/data/items/properties/attributes/properties/done",
+                "type": "boolean",
+                "title": "The Done Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "important": {
+                "$id": "#/properties/data/items/properties/attributes/properties/important",
+                "type": "boolean",
+                "title": "The Important Schema",
+                "default": false,
+                "examples": [
+                  false
+                ]
               }
             }
           },
