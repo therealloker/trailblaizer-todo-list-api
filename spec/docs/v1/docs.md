@@ -2,306 +2,22 @@
 
 This api is implemented according to the JSON API spec.
 
-# Group Projects
-
-
-## Projects [/projects]
-
-
-### List [GET /api/projects]
-
-
-+ Request response projects success
-**GET**&nbsp;&nbsp;`/api/projects`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjI0OTkzMTh9.f2iRQKEqDd2yQUiNIsEbyVjEVFDo4fAIJOM00MSAQWc
-            Content-Type: application/json
-
-+ Response 200
-
-    + Headers
-
-            Content-Type: application/vnd.api+json
-
-    + Body
-
-            {
-              "data": [
-                {
-                  "id": "1",
-                  "type": "projects",
-                  "attributes": {
-                    "name": "est"
-                  },
-                  "links": {
-                    "self": "/api/projects/1"
-                  }
-                },
-                {
-                  "id": "2",
-                  "type": "projects",
-                  "attributes": {
-                    "name": "sapiente"
-                  },
-                  "links": {
-                    "self": "/api/projects/2"
-                  }
-                }
-              ],
-              "jsonapi": {
-                "version": "1.0"
-              }
-            }
-
-### Create [POST /api/projects]
-
-
-+ Request project create success
-**POST**&nbsp;&nbsp;`/api/projects`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NjI0OTkzMTh9.0fpg6DVdwvMd8LxgmM3qQRhS5XciPPj_Axrqy83Hp8w
-            Content-Type: application/json
-
-    + Body
-
-            {
-              "name": "distinctio"
-            }
-
-+ Response 201
-
-    + Headers
-
-            Content-Type: application/vnd.api+json
-
-    + Body
-
-            {
-              "data": {
-                "id": "3",
-                "type": "projects",
-                "attributes": {
-                  "name": "distinctio"
-                },
-                "links": {
-                  "self": "/api/projects/3"
-                }
-              },
-              "jsonapi": {
-                "version": "1.0"
-              }
-            }
-
-+ Request creating fails
-**POST**&nbsp;&nbsp;`/api/projects`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NjI0OTkzMTh9.QGEl6j9paTROUv-AazTcSIKWUDpOKWD-aOp7-O77pvc
-            Content-Type: application/json
-
-    + Body
-
-            {
-              "name": ""
-            }
-
-+ Response 422
-
-    + Headers
-
-            Content-Type: application/vnd.api+json
-
-    + Body
-
-            {
-              "errors": [
-                {
-                  "detail": "must be filled",
-                  "source": {
-                    "pointer": "/data/attributes/name"
-                  }
-                }
-              ],
-              "jsonapi": {
-                "version": "1.0"
-              }
-            }
-
-### Get record [GET /api/projects/{id}]
-
-+ Parameters
-    + id: `4` (number, required)
-
-+ Request gets a project success
-**GET**&nbsp;&nbsp;`/api/projects/4`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1NjI0OTkzMTh9.ow-JC0jpKezAFITfucpUcod5s_EsI4i11cSOb4OLpS4
-            Content-Type: application/json
-
-+ Response 200
-
-    + Headers
-
-            Content-Type: application/vnd.api+json
-
-    + Body
-
-            {
-              "data": {
-                "id": "4",
-                "type": "projects",
-                "attributes": {
-                  "name": "quidem"
-                },
-                "relationships": {
-                  "tasks": {
-                    "links": {
-                      "related": "/api/projects/4/tasks"
-                    }
-                  }
-                },
-                "links": {
-                  "self": "/api/projects/4"
-                }
-              },
-              "jsonapi": {
-                "version": "1.0"
-              }
-            }
-
-### Update [PATCH /api/projects/{id}]
-
-+ Parameters
-    + id: `5` (number, required)
-
-+ Request project update success
-**PATCH**&nbsp;&nbsp;`/api/projects/5`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1NjI0OTkzMTh9.DsfdwVDZb3BKtP1r6xdvsU22hAtoyppldIreU-afg5o
-            Content-Type: application/json
-
-    + Body
-
-            {
-              "name": "non"
-            }
-
-+ Response 200
-
-    + Headers
-
-            Content-Type: application/vnd.api+json
-
-    + Body
-
-            {
-              "data": {
-                "id": "5",
-                "type": "projects",
-                "attributes": {
-                  "name": "non"
-                },
-                "relationships": {
-                  "tasks": {
-                    "links": {
-                      "related": "/api/projects/5/tasks"
-                    }
-                  }
-                },
-                "links": {
-                  "self": "/api/projects/5"
-                }
-              },
-              "jsonapi": {
-                "version": "1.0"
-              }
-            }
-
-+ Request updating fails
-**PATCH**&nbsp;&nbsp;`/api/projects/6`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE1NjI0OTkzMTl9.0tky53Gl-VgxwleSKozKEGzXPqjTlrI2LErmnX0drzg
-            Content-Type: application/json
-
-    + Body
-
-            {
-              "name": ""
-            }
-
-+ Response 422
-
-    + Headers
-
-            Content-Type: application/vnd.api+json
-
-    + Body
-
-            {
-              "errors": [
-                {
-                  "detail": "must be filled",
-                  "source": {
-                    "pointer": "/data/attributes/name"
-                  }
-                }
-              ],
-              "jsonapi": {
-                "version": "1.0"
-              }
-            }
-
-### Delete [DELETE /api/projects/{id}]
-
-+ Parameters
-    + id: `7` (number, required)
-
-+ Request project delete success
-**DELETE**&nbsp;&nbsp;`/api/projects/7`
-
-    + Headers
-
-            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1NjI0OTkzMTl9.Bh2cK3ew4J32DA6v2BZmHbLAPRzNOM6jk86bHK1vQeU
-            Content-Type: application/json
-
-+ Response 204
-
 # Group Tasks
 
 
-## Tasks [/projects/:id/tasks]
+## Tasks [/tasks]
 
 
-### List [GET /api/projects/{project_id}/tasks]
+### List [GET /api/tasks]
 
-+ Parameters
-    + project_id: `8` (number, required)
 
-+ Request response tasks success
-**GET**&nbsp;&nbsp;`/api/projects/8/tasks`
++ Request response success
+**GET**&nbsp;&nbsp;`/api/tasks`
 
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJleHAiOjE1NjI0OTkzMTl9.TQcD2Y95raFKu5tcsezT9RBSsNv3-JSKUd9XjXXq14U
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjI1NTk3Mzh9.P6jJ1XgaLHTFQaII45wDr_lavZ8QUZuGKX_qzv_8kXs
             Content-Type: application/json
 
 + Response 200
@@ -318,7 +34,9 @@ This api is implemented according to the JSON API spec.
                   "id": "1",
                   "type": "tasks",
                   "attributes": {
-                    "name": "voluptatem"
+                    "name": "et",
+                    "done": false,
+                    "important": false
                   },
                   "links": {
                     "self": "/api/tasks/1"
@@ -328,7 +46,9 @@ This api is implemented according to the JSON API spec.
                   "id": "2",
                   "type": "tasks",
                   "attributes": {
-                    "name": "error"
+                    "name": "omnis",
+                    "done": false,
+                    "important": false
                   },
                   "links": {
                     "self": "/api/tasks/2"
@@ -340,24 +60,24 @@ This api is implemented according to the JSON API spec.
               }
             }
 
-### Create [POST /api/projects/{project_id}/tasks]
+### Create [POST /api/tasks]
 
-+ Parameters
-    + project_id: `9` (number, required)
 
-+ Request task created success
-**POST**&nbsp;&nbsp;`/api/projects/9/tasks`
++ Request response success
+**POST**&nbsp;&nbsp;`/api/tasks`
 
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1NjI0OTkzMTl9.Tkd27Y54TH9Hx3PgOiwNvnw7AkyM_rkJ6lkv5kDbpPA
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NjI1NTk3Mzh9.o55jakX9vTwMd7r6Ad4U3K8hnSQ-9r1fM9xwCkLRlXM
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "ut"
+              "name": "libero",
+              "done": false,
+              "important": false
             }
 
 + Response 201
@@ -373,7 +93,9 @@ This api is implemented according to the JSON API spec.
                 "id": "3",
                 "type": "tasks",
                 "attributes": {
-                  "name": "ut"
+                  "name": "libero",
+                  "done": false,
+                  "important": false
                 },
                 "links": {
                   "self": "/api/tasks/3"
@@ -385,12 +107,12 @@ This api is implemented according to the JSON API spec.
             }
 
 + Request creating fails
-**POST**&nbsp;&nbsp;`/api/projects/10/tasks`
+**POST**&nbsp;&nbsp;`/api/tasks`
 
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNTYyNDk5MzE5fQ.Ak0YTrsyVhQPDO7a31ubzqdMfOYdaEYRKMJuJ6ZssrA
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NjI1NTk3Mzl9.-wm-0XzX5KH3PUJjyfgMf1lemDIC_NqAxGy5x-zTyPw
             Content-Type: application/json
 
     + Body
@@ -426,13 +148,13 @@ This api is implemented according to the JSON API spec.
 + Parameters
     + id: `4` (number, required)
 
-+ Request gets task success
++ Request response success
 **GET**&nbsp;&nbsp;`/api/tasks/4`
 
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZXhwIjoxNTYyNDk5MzE5fQ.JUdMNmjEXRkZLjcKv5gRv7FD6gCMo_Barn8x43R72FY
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1NjI1NTk3Mzl9.oJOioZX0vj17cAGxPSiSHaQXErDH-Dvn44XjuaRquho
             Content-Type: application/json
 
 + Response 200
@@ -448,14 +170,9 @@ This api is implemented according to the JSON API spec.
                 "id": "4",
                 "type": "tasks",
                 "attributes": {
-                  "name": "eos"
-                },
-                "relationships": {
-                  "project": {
-                    "links": {
-                      "self": "/api/projects/11"
-                    }
-                  }
+                  "name": "qui",
+                  "done": false,
+                  "important": false
                 },
                 "links": {
                   "self": "/api/tasks/4"
@@ -471,19 +188,21 @@ This api is implemented according to the JSON API spec.
 + Parameters
     + id: `5` (number, required)
 
-+ Request task update success
++ Request response success
 **PATCH**&nbsp;&nbsp;`/api/tasks/5`
 
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMiwiZXhwIjoxNTYyNDk5MzE5fQ.TQ3H3ov7qdzM0HskIzN_QqGBv0CLhab64F8-mIRMTxw
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1NjI1NTk3Mzl9.eDTbRXRqtr7t_WgXMPheS1zzEBTbu7iGNYgIeRdDcD4
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "culpa"
+              "name": "voluptatem",
+              "done": false,
+              "important": false
             }
 
 + Response 200
@@ -499,14 +218,9 @@ This api is implemented according to the JSON API spec.
                 "id": "5",
                 "type": "tasks",
                 "attributes": {
-                  "name": "culpa"
-                },
-                "relationships": {
-                  "project": {
-                    "links": {
-                      "self": "/api/projects/12"
-                    }
-                  }
+                  "name": "voluptatem",
+                  "done": false,
+                  "important": false
                 },
                 "links": {
                   "self": "/api/tasks/5"
@@ -523,13 +237,14 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMywiZXhwIjoxNTYyNDk5MzE5fQ.njDCpv3eY2lViFUocDNDKVjeGh2ASI7LkJ3_Iocdhqw
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE1NjI1NTk3Mzl9.60Q0Q-0X3dHL2fW0sgjulgryCZF69nwPEPp1LlCUdI8
             Content-Type: application/json
 
     + Body
 
             {
-              "name": ""
+              "name": "",
+              "done": "no"
             }
 
 + Response 422
@@ -547,6 +262,12 @@ This api is implemented according to the JSON API spec.
                   "source": {
                     "pointer": "/data/attributes/name"
                   }
+                },
+                {
+                  "detail": "You are already have a task with such name",
+                  "source": {
+                    "pointer": "/data/attributes/name"
+                  }
                 }
               ],
               "jsonapi": {
@@ -559,13 +280,13 @@ This api is implemented according to the JSON API spec.
 + Parameters
     + id: `7` (number, required)
 
-+ Request project delete success
++ Request response success
 **DELETE**&nbsp;&nbsp;`/api/tasks/7`
 
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNCwiZXhwIjoxNTYyNDk5MzE5fQ.R1QFSWSzH3lKWv4ZLD5zZ_WWX3oJoLmeyfngbDygWvc
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1NjI1NTk3Mzl9.8PWTrZExu6RehqLGXVslxj43MoNQcnQNwyZpYGKHafw
             Content-Type: application/json
 
 + Response 204
@@ -590,7 +311,7 @@ This api is implemented according to the JSON API spec.
     + Body
 
             {
-              "email": "test-email16@email.com",
+              "email": "test-email9@email.com",
               "password": "Password1",
               "password_confirmation": "Password1"
             }
@@ -605,10 +326,10 @@ This api is implemented according to the JSON API spec.
 
             {
               "data": {
-                "id": "15",
+                "id": "8",
                 "type": "users",
                 "attributes": {
-                  "email": "test-email16@email.com"
+                  "email": "test-email9@email.com"
                 }
               },
               "jsonapi": {
@@ -675,7 +396,7 @@ This api is implemented according to the JSON API spec.
     + Body
 
             {
-              "email": "test-email19@email.com",
+              "email": "test-email12@email.com",
               "password": "Password1"
             }
 
@@ -689,14 +410,14 @@ This api is implemented according to the JSON API spec.
 
             {
               "data": {
-                "id": "16",
+                "id": "9",
                 "type": "users",
                 "attributes": {
-                  "email": "test-email19@email.com"
+                  "email": "test-email12@email.com"
                 }
               },
               "meta": {
-                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNiwiZXhwIjoxNTYyNDk5MzE5fQ.nTjHAzD0mXHnDjJ4qqgmGD8holDVVXTbJGNhTGFoO_M"
+                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1NjI1NTk3Mzl9.muik_ewePN_KiAnQCgJNIvZtQukouWLtYKezolki-6k"
               },
               "jsonapi": {
                 "version": "1.0"
