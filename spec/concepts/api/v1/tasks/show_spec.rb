@@ -15,7 +15,7 @@ RSpec.describe V1::Tasks::Operation::Show do
     context 'when the task relate to the user' do
       let(:task) { valid_task }
 
-      it 'shows the task' do
+      it 'returns the task' do
         expect(result['result.policy.default']).to be_success
         expect(result[:errors]).to be_nil
         expect(result[:model]).to eq task
@@ -28,7 +28,7 @@ RSpec.describe V1::Tasks::Operation::Show do
     context 'when the task does not relate to the user' do
       let(:task) { create(:task) }
 
-      it 'does not show the task' do
+      it 'does not return the task' do
         expect(result['result.policy.default']).to be_failure
         expect(result).to be_failure
       end
