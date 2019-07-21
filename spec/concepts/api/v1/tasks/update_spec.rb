@@ -17,19 +17,48 @@ RSpec.describe V1::Tasks::Operation::Update do
   describe 'Success' do
     let(:params) { valid_params }
 
-    it 'updates the task' do
-      expect { result; task.reload }.to change(task, :name).from('get rest').to('make test')
-      expect { result; task.reload }.to change(task, :done).from(false).to(true)
-      expect { result; task.reload }.to change(task, :important).from(false).to(true)
-      expect(result[:errors]).to be_nil
-      expect(result[:model]).to be_persisted
-      expect(result).to be_success
+    context 'when params are valid' do
+      it 'updates the task name' do
+        expect {
+          result
+          task.reload
+        }.to change(task, :name).from('get rest').to('make test')
+        expect(result[:errors]).to be_nil
+        expect(result[:model]).to be_persisted
+        expect(result).to be_success
+      end
+
+      it 'updates the task done status' do
+        expect {
+          result
+          task.reload
+        }.to change(task, :done).from(false).to(true)
+        expect(result[:errors]).to be_nil
+        expect(result[:model]).to be_persisted
+        expect(result).to be_success
+      end
+
+      it 'updates the task important status' do
+        expect {
+          result
+          task.reload
+        }.to change(task, :important).from(false).to(true)
+        expect(result[:errors]).to be_nil
+        expect(result[:model]).to be_persisted
+        expect(result).to be_success
+      end
     end
   end
 
   describe 'Fail' do
     context 'when name is empty' do
-      let(:params) { { id: task.id } }
+      let(:params) do
+        {
+          id: task.id,
+          name: ''
+        }
+      end
+
       let(:errors) do
         {
           name: ['must be filled']
@@ -40,7 +69,11 @@ RSpec.describe V1::Tasks::Operation::Update do
     end
 
     context 'when name is not unique' do
-      let(:errors) { { name: ['You already have a task with such name'] } }
+      let(:errors) do
+        {
+          name: ['You already have a task with such name']
+        }
+      end
       let(:params) { valid_params }
 
       before { create(:task, name: params[:name], user: user) }

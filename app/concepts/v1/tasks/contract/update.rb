@@ -9,6 +9,7 @@ module V1::Tasks::Contract
     property :important
 
     validation :default do
+      optional(:name).filled
       optional(:done).filled(:bool?)
       optional(:important).filled(:bool?)
     end
