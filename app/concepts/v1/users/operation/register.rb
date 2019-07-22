@@ -6,10 +6,14 @@ module V1::Users::Operation
     step Contract::Build(constant: V1::Users::Contract::Register)
     step Contract::Validate()
     step Contract::Persist()
+    step V1::Users::Lib::Step::GenerateToken
     step :renderer_options
 
-    def renderer_options(ctx, **)
-      ctx[:renderer_options] = { class: { User: V1::Users::Representer::Register } }
+    def renderer_options(ctx, jwt:, **)
+      ctx[:renderer_options] = {
+        meta: { token: jwt },
+        class: { User: V1::Users::Representer::Default }
+      }
     end
   end
 end

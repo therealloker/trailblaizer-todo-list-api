@@ -7,7 +7,7 @@ module V1::Users::Operation
     step :find
     step :authenticate!
     fail :invalid_credentials!
-    step :generate_token!
+    step V1::Users::Lib::Step::GenerateToken
     step :renderer_options
 
     def find(ctx, params:, **)
@@ -22,14 +22,10 @@ module V1::Users::Operation
       ctx['contract.default'].errors.add(:user, I18n.t('errors.invalid_credentials'))
     end
 
-    def generate_token!(ctx, **)
-      ctx[:jwt] = V1::Lib::Auth::JsonWebToken.encode(user_id: ctx[:model].id)
-    end
-
     def renderer_options(ctx, jwt:, **)
       ctx[:renderer_options] = {
         meta: { token: jwt },
-        class: { User: V1::Users::Representer::Login }
+        class: { User: V1::Users::Representer::Default }
       }
     end
   end
