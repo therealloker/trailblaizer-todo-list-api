@@ -38,7 +38,7 @@ RSpec.describe V1::Users::Operation::Register do
 
     context 'when passwords are different' do
       let(:params) { valid_params.merge(password_confirmation: '') }
-      let(:errors) { { password_confirmation: ['must be equal to Password1'] } }
+      let(:errors) { { password_confirmation: ['must be filled', 'Password confirmation and Password must match.'] } }
 
       include_examples 'has validation errors'
     end
