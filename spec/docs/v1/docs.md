@@ -17,7 +17,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjI1NTk3Mzh9.P6jJ1XgaLHTFQaII45wDr_lavZ8QUZuGKX_qzv_8kXs
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NjM5Mjg4MzZ9.P1qPfr9ryD_NcEPookfuPPtTjrrZiJ5yhG2GhFuNrs4
             Content-Type: application/json
 
 + Response 200
@@ -34,7 +34,7 @@ This api is implemented according to the JSON API spec.
                   "id": "1",
                   "type": "tasks",
                   "attributes": {
-                    "name": "et",
+                    "name": "in",
                     "done": false,
                     "important": false
                   },
@@ -46,7 +46,7 @@ This api is implemented according to the JSON API spec.
                   "id": "2",
                   "type": "tasks",
                   "attributes": {
-                    "name": "omnis",
+                    "name": "velit",
                     "done": false,
                     "important": false
                   },
@@ -69,13 +69,13 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NjI1NTk3Mzh9.o55jakX9vTwMd7r6Ad4U3K8hnSQ-9r1fM9xwCkLRlXM
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1NjM5Mjg4MzZ9.3KI1o39B0e1oE6DNx289dTFlAbRWa32SE1n_T9aLfvU
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "libero",
+              "name": "nulla",
               "done": false,
               "important": false
             }
@@ -93,7 +93,7 @@ This api is implemented according to the JSON API spec.
                 "id": "3",
                 "type": "tasks",
                 "attributes": {
-                  "name": "libero",
+                  "name": "nulla",
                   "done": false,
                   "important": false
                 },
@@ -112,7 +112,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NjI1NTk3Mzl9.-wm-0XzX5KH3PUJjyfgMf1lemDIC_NqAxGy5x-zTyPw
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE1NjM5Mjg4MzZ9.B1771wh2Un_L5vim4-5_OWz7CEZCuym0VS7NvHaZ08Y
             Content-Type: application/json
 
     + Body
@@ -154,7 +154,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1NjI1NTk3Mzl9.oJOioZX0vj17cAGxPSiSHaQXErDH-Dvn44XjuaRquho
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE1NjM5Mjg4MzZ9.9MmLlsGEwLsDl974JXCwwSP-mr2i5vDjICgYMA4v910
             Content-Type: application/json
 
 + Response 200
@@ -170,7 +170,7 @@ This api is implemented according to the JSON API spec.
                 "id": "4",
                 "type": "tasks",
                 "attributes": {
-                  "name": "qui",
+                  "name": "ut",
                   "done": false,
                   "important": false
                 },
@@ -194,13 +194,13 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1NjI1NTk3Mzl9.eDTbRXRqtr7t_WgXMPheS1zzEBTbu7iGNYgIeRdDcD4
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1NjM5Mjg4MzZ9.YVbbkb0txeXBnCW5IB7R8_7k01JqBSzjTGsjpcrR4wo
             Content-Type: application/json
 
     + Body
 
             {
-              "name": "voluptatem",
+              "name": "occaecati",
               "done": false,
               "important": false
             }
@@ -218,7 +218,7 @@ This api is implemented according to the JSON API spec.
                 "id": "5",
                 "type": "tasks",
                 "attributes": {
-                  "name": "voluptatem",
+                  "name": "occaecati",
                   "done": false,
                   "important": false
                 },
@@ -237,7 +237,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE1NjI1NTk3Mzl9.60Q0Q-0X3dHL2fW0sgjulgryCZF69nwPEPp1LlCUdI8
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE1NjM5Mjg4MzZ9.EAeVwXKdPyZnoppWKHY1VbJS0in2dSeKAMfXnXotb00
             Content-Type: application/json
 
     + Body
@@ -262,12 +262,6 @@ This api is implemented according to the JSON API spec.
                   "source": {
                     "pointer": "/data/attributes/name"
                   }
-                },
-                {
-                  "detail": "You are already have a task with such name",
-                  "source": {
-                    "pointer": "/data/attributes/name"
-                  }
                 }
               ],
               "jsonapi": {
@@ -286,7 +280,7 @@ This api is implemented according to the JSON API spec.
     + Headers
 
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1NjI1NTk3Mzl9.8PWTrZExu6RehqLGXVslxj43MoNQcnQNwyZpYGKHafw
+            Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE1NjM5Mjg4MzZ9.wc0lfGZFV8feeQrTNGnHq5ddAHeyhh4wZORC-7r3MfU
             Content-Type: application/json
 
 + Response 204
@@ -417,7 +411,7 @@ This api is implemented according to the JSON API spec.
                 }
               },
               "meta": {
-                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1NjI1NTk3Mzl9.muik_ewePN_KiAnQCgJNIvZtQukouWLtYKezolki-6k"
+                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1NjM5Mjg4MzZ9.d9j4cXkGNbhZGdl_Nk2SSwgH8kwR17ZE378D1I6v-QE"
               },
               "jsonapi": {
                 "version": "1.0"
