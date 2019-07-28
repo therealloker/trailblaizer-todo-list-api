@@ -1,24 +1,4 @@
-# README
+# Simple ToDO API on Trailblaizer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### [API documentation is available here](http://trails-todo.herokuapp.com/api/documentation/v1)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
