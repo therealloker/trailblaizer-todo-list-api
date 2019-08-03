@@ -5,4 +5,3 @@ en:
     same_password?: Password confirmation and Password must match.
     file_not_found: Documentation api-file not build yet or requested api version not exists.
     invalid_credentials: You shall not pass
-    task_name_unique?: You already have a task with such name
