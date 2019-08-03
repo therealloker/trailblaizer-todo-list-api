@@ -36,15 +36,6 @@ RSpec.describe V1::Tasks::Operation::Create do
       include_examples 'has validation errors'
     end
 
-    context 'when name is not unique' do
-      let(:errors) { { name: ['You already have a task with such name'] } }
-      let(:params) { valid_params }
-
-      before { create(:task, name: task.name, user: user) }
-
-      include_examples 'has validation errors'
-    end
-
     context 'when keys has incorrect types' do
       let(:errors) { { important: ['must be boolean'], done: ['must be boolean'] } }
       let(:params) { { name: task.name, important: 'yes!', done: 'no(' } }
